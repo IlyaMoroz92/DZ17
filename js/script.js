@@ -2,7 +2,8 @@
   const stepBtn = document.querySelector(".button-step");
   const input = document.querySelector(".input");
   const result = document.querySelector(".result");
-  const stepResult = document.querySelector(".result-step");
+  const body = document.querySelector("body");
+
 
   let factorial = 1;
   let stepFactorial = 1;
@@ -20,7 +21,9 @@
   function* stepGenerator(i = 1) {
     while (i <= input.value) {
       stepFactorial = stepFactorial * i;
-      stepResult.innerHTML = stepFactorial;
+      const stepResult3 = document.createElement('p')
+      stepResult3.innerHTML = stepFactorial;
+      body.appendChild(stepResult3)
       yield i;
       i++;
     }
